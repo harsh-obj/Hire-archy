@@ -1,0 +1,22 @@
+# Python & Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+venv/
+.venv/
+env/
+.env
+db.sqlite3
+
+# Local IDE & workspace tools
+anaconda_projects/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Project report, presentation & generated documentation binaries (local deliverables)
+docs/
+*.pptx
