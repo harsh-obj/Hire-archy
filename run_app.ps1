@@ -23,9 +23,8 @@ Write-Host "[2/3] Checking dependencies..." -ForegroundColor Yellow
 pip install -r requirements.txt --quiet --no-warn-script-location
 Write-Host "       Dependencies verified!" -ForegroundColor Green
 
-Write-Host "[3/3] Launching Django Server on http://127.0.0.1:8000..." -ForegroundColor Yellow
+Write-Host "[3/3] Launching Django Server (open to local network)..." -ForegroundColor Yellow
 Write-Host "       Press Ctrl+C to stop the application." -ForegroundColor Cyan
 Write-Host ""
 
-Start-Process "http://127.0.0.1:8000"
-python manage.py runserver 127.0.0.1:8000
+python manage.py runserver 0.0.0.0:8000

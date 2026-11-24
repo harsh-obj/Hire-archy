@@ -19,11 +19,10 @@ if %errorlevel% neq 0 (
 echo [2/3] Checking dependencies...
 pip install -r requirements.txt --quiet --no-warn-script-location
 
-echo [3/3] Launching Django Development Server on http://127.0.0.1:8000...
+echo [3/3] Launching Django Development Server (open to local network)...
 echo.
 echo Press CTRL+C in this window to stop the server.
 echo.
-start "" http://127.0.0.1:8000
-python manage.py runserver 127.0.0.1:8000
+python manage.py runserver 0.0.0.0:8000
 
 pause

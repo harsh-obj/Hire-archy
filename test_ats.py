@@ -242,6 +242,20 @@ class TestHireArchy(unittest.TestCase):
         index_html = b"".join(index_res.streaming_content).decode("utf-8")
         self.assertIn("Hire-archy", index_html)
 
+    def test_custom_runserver_port_discovery_and_lan(self):
+        """Verify custom runserver defaults to 0.0.0.0 and discovers available ports."""
+        from ats.management.commands.runserver import (
+            Command as RunserverCommand,
+            find_available_ports,
+            get_lan_ips,
+        )
+
+        self.assertEqual(RunserverCommand.default_addr, "0.0.0.0")
+        ports = find_available_ports("0.0.0.0", 8080)
+        self.assertIsInstance(ports, list)
+        self.assertGreater(len(ports), 0)
+        self.assertIsInstance(get_lan_ips(), list)
+
 
 if __name__ == "__main__":
     print("=" * 60)

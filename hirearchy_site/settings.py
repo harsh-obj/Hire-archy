@@ -14,12 +14,12 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes")
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "*"]
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
+    "ats",
     "django.contrib.contenttypes",
     "django.contrib.staticfiles",
-    "ats",
 ]
 
 MIDDLEWARE = [
